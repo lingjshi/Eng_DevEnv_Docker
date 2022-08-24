@@ -1,0 +1,17 @@
+{
+    "id": "dc0d3b1f-a39f-11e9-8cf8-a6bbec5eac93",
+    "deployConfigs": {},
+    "description": "Meraki development env image for learning lab with sample code, SDK, Ansible and SDKs ",
+    "dockerImage": "npateriya/devenv-meraki",
+    "envVars": {},
+    "logo": "",
+    "nameId": "devenv-meraki",
+    "sourceRepo": "http://wwwin-github.cisco.com/DevNet/DevEnvImages",
+    "status": "published",
+    "title": "Meraki development env image for learning lab",
+    "version": "v004",
+    "versionStage": "v004",
+    "creatorProfileID": "",
+    "createTime": "0001-01-01T00:00:00Z",
+    "updateTime": "0001-01-01T00:00:00Z"
+}

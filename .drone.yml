@@ -1,0 +1,117 @@
+workspace:
+  base: /go
+  path: src/wwwin-github.cisco.com/DevNet/Eng_DevEnv_Docker
+
+pipeline:
+  publish/internal:
+    image: plugins/docker:1.12
+    repo: developenv/devenv-base
+    context: base
+    dockerfile: base/Dockerfile
+    username: developenv
+    password: C!scoD3vn3t
+    tags:
+      - "${DRONE_COMMIT:0:7}"
+      - v001
+      - latest
+    when:
+      branch:
+        - base
+
+  publish/internal:
+    image: plugins/docker:1.12
+    repo: developenv/devenv-base-py27
+    context: base-py27
+    dockerfile: base-py27/Dockerfile
+    username: developenv
+    password: C!scoD3vn3t
+    tags:
+      - "${DRONE_COMMIT:0:7}"
+      - v002
+      - latest
+    when:
+      branch:
+        - base-py27
+
+  publish/internal:
+    image: plugins/docker:1.12
+    repo: developenv/devenv-aci-py27
+    context: aci-py27
+    dockerfile: aci-py27/Dockerfile
+    username: developenv
+    password: C!scoD3vn3t
+    tags:
+      - "${DRONE_COMMIT:0:7}"
+      - v002
+      - latest
+    when:
+      branch:
+        - aci-py27
+
+  publish/internal:
+    image: plugins/docker:1.12
+    repo: developenv/devenv-dnac
+    context: dnac
+    dockerfile: dnac/Dockerfile
+    username: developenv
+    password: C!scoD3vn3t
+    tags:
+      - "${DRONE_COMMIT:0:7}"
+      - v001
+      - latest
+    when:
+      branch:
+        - dnac
+
+  publish/internal:
+    image: plugins/docker:1.12
+    repo: developenv/devenv-meraki
+    context: meraki
+    dockerfile: meraki/Dockerfile
+    username: developenv
+    password: C!scoD3vn3t
+    tags:
+      - "${DRONE_COMMIT:0:7}"
+      - v002
+      - latest
+    when:
+      branch:
+        - meraki
+
+  publish/internal:
+    image: plugins/docker:1.12
+    repo: developenv/devenv-sdwan
+    context: sdwan
+    dockerfile: sdwan/Dockerfile
+    username: developenv
+    password: C!scoD3vn3t
+    tags:
+      - "${DRONE_COMMIT:0:7}"
+      - v001
+      - latest
+    when:
+      branch:
+        - sdwan
+
+  publish/internal:
+    image: plugins/docker:1.12
+    repo: developenv/devenv-python-101
+    context: python-101
+    dockerfile: python-101/Dockerfile
+    username: developenv
+    password: C!scoD3vn3t
+    tags:
+      - "${DRONE_COMMIT:0:7}"
+      - v003
+      - latest
+    when:
+      branch:
+        - python-101
+  notify:
+    image: cliang2/drone-spark
+    auth_token: MmY2NzliMWYtMWRkMi00YzNjLTgxMzYtNGQyZmQwMTY5ZjE3MzA0ZDA1NTUtYmU4
+    roomName: "DevNet Builds"
+    message: "New Eng_DevEnv_Docker service build, docker image label: ${DRONE_COMMIT:0:7}!!!"
+    when:
+      status: [ success, failure ]
+
