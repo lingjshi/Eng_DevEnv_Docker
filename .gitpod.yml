@@ -1,0 +1,12 @@
+# Commands to start on workspace startup
+image:
+  file: Dockerfile
+  context: ./base
+# tasks:
+#   - name: terminal-base
+#     image: 
+#       file: base/Dockerfile
+# # Ports to expose on workspace startup
+# ports:
+#   - port: 8000
+#     onOpen: open-preview
