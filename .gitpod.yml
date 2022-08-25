@@ -1,7 +1,6 @@
 # Commands to start on workspace startup
 image:
-  file: base/Dockerfile
-  context: ./base
+  file: Dockerfile
 # tasks:
 #   - name: terminal-base
 #     image: 
