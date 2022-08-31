@@ -7,6 +7,7 @@ tasks:
       curl -L -s  -o /usr/bin/ttyd https://github.com/tsl0922/ttyd/releases/download/1.5.0/ttyd_linux.x86_64 
       chmod 755 /usr/bin/ttyd
       cd /home/develop
+      
     init: |
       cp config/wrapper_script.sh /usr/local/bin/wrapper_script.sh
       cp config/filebrowser /usr/local/bin/filebrowser
@@ -14,9 +15,3 @@ tasks:
       cp config/cors.list /usr/local/bin/cors.list
       cp config/index.html /usr/bin/index.html
       export CORS_WHITELIST_FILEPATH=/usr/local/bin/cors.list
-    command: |
-      adduser -S develop
-      su - develop
-      mkdir src
-      cd src
-      ./usr/local/bin/wrapper_script.sh
