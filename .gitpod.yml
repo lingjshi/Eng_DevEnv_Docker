@@ -1,10 +1,22 @@
-image:
-  file: .gitpod.Dockerfile
+image: python:alpine3.7
 tasks:
-  - name: Terminal 1
-    before: echo 'before script'
-    init: echo 'init script'
-    command: echo 'start script'
-  - name: Terminal 2
-    init: echo 'init script 2'
-    command: echo 'start script 2'
+  - before: |
+      apk add --no-cache bash
+      apk add --update git curl vim tar tree
+      apk add --no-cache openssl-dev build-base python3-dev libffi-dev openssh
+      curl -L -s  -o /usr/bin/ttyd https://github.com/tsl0922/ttyd/releases/download/1.5.0/ttyd_linux.x86_64 
+      chmod 755 /usr/bin/ttyd
+      cd /home/develop
+    init: |
+      cp config/wrapper_script.sh /usr/local/bin/wrapper_script.sh
+      cp config/filebrowser /usr/local/bin/filebrowser
+      cp config/config.json /usr/local/bin/config.json
+      cp config/cors.list /usr/local/bin/cors.list
+      cp config/index.html /usr/bin/index.html
+      export CORS_WHITELIST_FILEPATH=/usr/local/bin/cors.list
+    command: |
+      adduser -S develop
+      su - develop
+      mkdir src
+      cd src
+      ./usr/local/bin/wrapper_script.sh
