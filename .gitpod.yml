@@ -1,8 +1,9 @@
+
 tasks:
   - name: Terminal 1
     before: echo 'before script'
     init: echo 'init script'
     command: echo 'start script'
   - name: Terminal 2
-    init: npm install
-    command: npm run dev
+    init: echo 'init script 2'
+    command: echo 'start script 2'
