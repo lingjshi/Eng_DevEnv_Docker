@@ -1,4 +1,4 @@
-FROM python:alpine3.7
+FROM gitpod/workspace-full:latest
 COPY config/wrapper_script.sh /usr/local/bin/wrapper_script.sh
 COPY config/filebrowser /usr/local/bin/filebrowser
 COPY config/config.json /usr/local/bin/config.json
