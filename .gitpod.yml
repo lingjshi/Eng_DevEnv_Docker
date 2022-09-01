@@ -1,7 +1,2 @@
 image: 
   file: .gitpod.Dockerfile
-tasks:
-  - command: |
-      apk add --no-cache bash
-      apk add --update git curl vim tar tree
-      apk add --no-cache openssl-dev build-base python3-dev libffi-dev openssh
