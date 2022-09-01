@@ -17,4 +17,16 @@ tasks:
     env:
       DB_HOST: localhost:3306
       DB_USER: readOnlyUser
+  - name: Rails
+      init: >
+        bundle install &&
+        yarn install --check-files &&
+        rails db:setup &&
+        gp sync-done bundle # 'bundle' is an arbitrary name
+      command: rails server
+
+    - name: Webpack
+      init: gp sync-await bundle # wait for the above 'init' to finish
+      command: bin/webpack-dev-server
+       
     
