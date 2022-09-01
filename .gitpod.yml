@@ -1,7 +1,5 @@
 image: 
   file: .gitpod.Dockerfile
-tasks:
-  - command: /usr/local/bin/wrapper_script.sh
 ports:
   - port: 8080
     onOpen: open-preview
