@@ -1,2 +1,2 @@
-FROM python:alpine3.7
+FROM gitpod/workspace-full:latest
 
