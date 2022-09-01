@@ -1,7 +1,7 @@
-image: python:alpine3.7
+image: 
+  file: .gitpod.Dockerfile
 tasks:
-  - init: yum install
-    command: |
+  - command: |
       apk add --no-cache bash
       apk add --update git curl vim tar tree
       apk add --no-cache openssl-dev build-base python3-dev libffi-dev openssh
