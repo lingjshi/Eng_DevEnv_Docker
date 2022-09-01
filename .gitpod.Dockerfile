@@ -13,9 +13,6 @@ COPY config/cors.list /usr/local/bin/cors.list
 COPY config/index.html /usr/bin/index.html
 ENV CORS_WHITELIST_FILEPATH=/usr/local/bin/cors.list
 
-EXPOSE 8080
-EXPOSE 9090
-
 RUN  adduser -S develop
 USER develop
 RUN mkdir src
