@@ -7,8 +7,8 @@ tasks:
       echo 'before init'
     init: |
       echo 'install npm'
-      gp env MY_URL=https://api.example.com
-      echo "my url is ${MY_URL}"
+      gp env TEXT=https://api.example.com
+      echo "hello, ${TEXT}"
     command: |
       echo 'start running scripts'
   - name: mysql-data-load
