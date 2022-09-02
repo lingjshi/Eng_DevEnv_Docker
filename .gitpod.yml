@@ -1,21 +1,15 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - name: Terminal 1
-    before: echo 'before script'
-    init: echo 'init script'
-    command: echo 'start script'
-  - name: Terminal 2
-    before: npm instal
-    init: echo 'init script 2'
-    command: echo 'start script 2'
-  - name: Terminal 3
+  - name: T1 - run task in order
+    before: echo 'before init'
     init: |
+      echo 'install npm'
       npm install
-      npm run configure-database
-    command: npm run dev
-    env:
-      DB_HOST: localhost:3306
-      DB_USER: readOnlyUser
+    command: |
+      echo 'start running dev'
+      npm run dev
        
-    
+ports:
+  - port: 3000
+    onOpen: open-preview
