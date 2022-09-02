@@ -1,10 +1,10 @@
-# Docker images for DevEnv
-Repo contains Dockerfile and config for various Developer Environments. 
-More details on wiki : https://wiki.cisco.com/display/4535/DevEnv+configuration+and+creation
+# Gitpod tasks usage testing in .gitpod.yaml (https://www.gitpod.io/docs/config-start-tasks)
 
-- base: Base image with python, console, tty, git cli and other utiilties
-- Meraki: Meraki repo based on meraki Devnet Express content
-- SDWAN : SDWAN repo for with code and configurations for sdwan related to learning lab
-- DNAC : DNAC express related repos
-- ACI : Basic API llab related repos
+Three commands (support both single-line and muiltple-lines)
 
+- **before**:  customize the terminal or install global project dependencies
+- **init**:  for heavy-lifting tasks - download dependencies, compile source code, run test suite, any other long-running processes …
+     (run the time-consuming init tasks continuously behind the scene)
+- **command**:   start your database or development server
+
+see .gitpod.yaml for each case
