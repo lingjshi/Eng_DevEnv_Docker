@@ -10,9 +10,9 @@ tasks:
       echo 'ready to run scripts'
       echo 'before init'
     init: |
-      echo 'install npm'
+      echo 'init task'
       gp env MSG=world
-      echo "hello, ${MSG}"
+      echo "hello, $MSG"
     command: |
       echo 'start running scripts'
   - name: mysql-data-load
