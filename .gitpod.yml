@@ -1,14 +1,18 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
+  - name: start tasks
+    env:
+      TEXT: "welcome to gitpod!"
+    command: echo "$TEXT"
   - name: run task in order
     before: |
       echo 'ready to run scripts'
       echo 'before init'
     init: |
       echo 'install npm'
-      gp env TEXT=https://api.example.com
-      echo "hello, ${TEXT}"
+      gp env MSG=world
+      echo "hello, ${MSG}"
     command: |
       echo 'start running scripts'
   - name: mysql-data-load
