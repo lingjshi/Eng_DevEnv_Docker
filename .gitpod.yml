@@ -3,8 +3,13 @@ image:
 tasks:
   - name: start tasks
     env:
-      TEXT: "welcome to gitpod!"
-    command: echo "$TEXT"
+      TEXT: "start gitpod tasks!"
+    command: |
+      if [ -n "${TEXT}"]; then
+        echo "TEXT"
+      else
+        echo "welcome to gitpod"
+      fi  
   - name: show env
     init: gp env > gitpod.env
     command: | 
