@@ -1,3 +1,1 @@
-FROM gitpod/workspace-full
-RUN sudo apt-get update \
-    & sudo apt-get install cowsay -y
+FROM gitpod/workspace-mysql
