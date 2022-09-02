@@ -4,17 +4,7 @@ tasks:
   - name: start tasks
     env:
       TEXT: "start gitpod tasks!"
-    command: |
-      if [ -n "${TEXT}"]; then
-        echo "TEXT"
-      else
-        echo "welcome to gitpod"
-      fi  
-  - name: show env
-    init: gp env > gitpod.env
-    command: | 
-      echo "$VAR1"
-      echo "$VAR2"
+    command: echo "$TEXT" 
   - name: run task in order
     before: |
       echo 'ready to run scripts'
