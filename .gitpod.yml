@@ -10,7 +10,7 @@ tasks:
       echo 'start running dev'
       npm run dev
   - name: mysql-data-load
-    before: gp await-port 3306
+    before: gp ports await 3306
     init: |
       mysql < example-database.sql
     command: |
