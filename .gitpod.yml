@@ -9,6 +9,19 @@ tasks:
     command: |
       echo 'start running dev'
       npm run dev
+  - name: mysql-data-load
+    before: gp await-port 3306
+    init: |
+      mysql < example-database.sql
+    command: |
+      gp sync-done mysql-data-load
+      mysql -e 'SHOW TABLES FROM exampledatabase'
+  - name: convert
+    init: make install_ontop
+    command: |
+      gp sync-await mysql-data-load
+      make convert
+      gp sync-done convert
        
 ports:
   - port: 3000
