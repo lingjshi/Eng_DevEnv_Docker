@@ -5,9 +5,7 @@ tasks:
     before: |
       echo 'ready to run scripts'
       echo 'before init'
-    init: |
-      echo 'install npm'
-      npm install
+    init: echo 'install npm'
     command: |
       echo 'start running dev'
       npm run dev
