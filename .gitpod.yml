@@ -1,14 +1,16 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - name: T1 - run task in order
+  - name: run task in order
     before: |
       echo 'ready to run scripts'
       echo 'before init'
-    init: echo 'install npm'
+    init: |
+      echo 'install npm'
+      gp env MY_URL=https://api.example.com
+      echo "my url is ${MY_URL}"
     command: |
-      echo 'start running dev'
-      npm run dev
+      echo 'start running scripts'
   - name: mysql-data-load
     before: gp ports await 3306
     init: |
