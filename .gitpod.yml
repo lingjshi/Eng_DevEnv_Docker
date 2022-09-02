@@ -4,7 +4,7 @@ tasks:
   - name: start tasks
     env:
       TEXT: "start gitpod tasks!"
-    command: echo "${TEXT}" 
+    command: echo "hi, ${TEXT}" 
   - name: run task in order
     before: |
       echo 'ready to run scripts'
