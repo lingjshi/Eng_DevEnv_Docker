@@ -5,6 +5,11 @@ tasks:
     env:
       TEXT: "welcome to gitpod!"
     command: echo "$TEXT"
+  - name: show env
+    init: gp env > gitpod.env
+    command: | 
+      echo "$VAR1"
+      echo "$VAR2"
   - name: run task in order
     before: |
       echo 'ready to run scripts'
