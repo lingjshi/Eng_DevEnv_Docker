@@ -11,7 +11,6 @@ tasks:
       echo "hello, ${TEXT}"
     command: |
       echo 'start running scripts'
-    openMode: split-right  
   - name: mysql-data-load
     before: gp ports await 3306
     init: |
