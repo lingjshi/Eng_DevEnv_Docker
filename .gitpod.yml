@@ -2,7 +2,7 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - name: open bash
-    command: bash 
+    command: echo 'welcome' 
 ports:
   - port: 8080
     onOpen: open-preview
